@@ -2,6 +2,7 @@
 
 html {
     box-sizing: border-box;
+    margin: 0;
 }
 
 * {
@@ -12,6 +13,7 @@ html {
     background-color: rgba(189, 229, 166, 0.627);
     text-align: center;
     border-radius: 25px;
+    padding: 1%;
 }
 
 .header_mod{
@@ -21,9 +23,8 @@ html {
 }
 
 body {
-    margin: 80px auto;
-    max-width: 800px;
-    padding: 0px 40px;
+    margin: 5% auto;
+    padding: 0px 8%;
     font-family: "Libre Franklin", "Helvetica", "Arial", sans-serif;
     line-height: 1.5;
     color: #555;
@@ -42,8 +43,6 @@ h1 :not(header_mod){
 
 
 h2{
-    margin-top: 1em;
-    padding-top: 1em;
     border-bottom: 1px solid rgb(22, 78, 22);
     color: #333
 }
@@ -59,62 +58,48 @@ a {
     color: #437A16;
   }
 
-table{
-    text-align: center;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td{
-    padding: 5px;
-    border-bottom: 3px solid rgba(189, 229, 166, 0.627);
-}
-
-tr:hover{
-    background-color: #2d4f11;
-    color: white;
-}
-
-.Encabezado_Tabla{
-    background-color:rgba(189, 229, 166, 0.627);
-  }
-
 footer{
     font-size: 15px;
     color:  #333;
 }
 
-
 .bloque-main{
-    height: auto;
-    display: flex;
-    width: 720px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:auto;
+    justify-items: start;
+    width: 100%;
+    border: 2px solid #38817a;
 }
 
-.bloque-izq{
-    width: 500px;
-    height: 450px;
-    padding: 5px;
-    flex: 1;
-    border-bottom: 10px solid  #38817a;
+.group-form{
+    grid-row-start:1;
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.elementos_form{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .bloque-drch{
-    width: 210px;
-    height: 450px;
-    flex: 1;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    grid-row-start:2;
     font-style: italic;
-    margin-top: 0px;
-    border-left: 5px solid #38817a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #38817a;
     color: white;
-}
-.bloque-inf{
-    text-align: center;
 }
 
 .button{
@@ -139,7 +124,7 @@ footer{
 
 .input_text{
     display: block;
-    width: 480px;
+    width: 90%;
     border-bottom: 3px solid #38817a;
     border-top: 0px;
     border-left: 0px;
@@ -147,6 +132,7 @@ footer{
     background-color: #EBF2F1;
     color: #32746D;
     height: 35px;
+    text-align: center;
 }
 
 .bloque_element{
@@ -164,12 +150,13 @@ fieldset{
 }
 textarea{
     display: block;
-    min-width: 480px;
+    min-width: 90%;
     max-width: 480px;
     min-height: 80px;
     max-height: 80px;
     background-color: #EBF2F1;
     color: #32746D;
+    text-align: center;
 }
 
 .comentario{
@@ -185,4 +172,78 @@ textarea{
 input:focus-visible, textarea:focus-visible{
     outline: 2px solid #2C6761;
     background-color: #d9f99d;
+}
+
+section,footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.group-hobbies{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.hobbies{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 10px;
+    border: 1px solid #38817a;
+}
+span,h3{
+    padding: 0px;
+}
+p{
+    text-align: center;
+    padding: 0%;
+    font-size: 16px;
+}
+.div-table{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    gap: 8px;
+
+}
+.row-table{
+    border: 1px solid #38817a;
+}
+.title-cards-table{
+    background-color: #15803d;
+    color: white;
+    padding: 1px;
+}
+
+@media screen and (min-width: 992px){
+    .div-table{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .group-hobbies{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .hobbies{
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+    }
+    .bloque-main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1;
+    }
+    .group-form{
+        grid-column-start: 1;
+    }
+    .bloque-drch{
+        grid-column-start: 2;
+        grid-row-start: 1;
+    }
 }
